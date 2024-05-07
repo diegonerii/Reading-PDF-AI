@@ -1,0 +1,10 @@
+## Notebooks
+*.ipynb
+
+## Env Variables
+environment.yml
+.env
+
+## VsCode Folders
+.vscode
+pyaienv
