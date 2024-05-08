@@ -46,8 +46,7 @@ class summaryText:
         tokenizer = AutoTokenizer.from_pretrained("facebook/bart-large-cnn")
         model = AutoModelForSeq2SeqLM.from_pretrained("facebook/bart-large-cnn")
     
-        # The tokenizer is responsible for all the preprocessing that the pre-trained model expects, 
-        # and can be called directly on a single string (as in the examples above) or on a list. 
+        # The tokenizer is responsible for all the preprocessing that the pre-trained model expects
         # It will produce a dictionary that you can use in subsequent code or simply pass directly to your model using the argument unpacking operator **
         tokenized_text = tokenizer(self.text)
         
