@@ -8,3 +8,6 @@ environment.yml
 ## VsCode Folders
 .vscode
 pyaienv
+
+## PDF
+*.pdf
