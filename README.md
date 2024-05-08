@@ -16,8 +16,8 @@ Este é um projeto simples que consiste em dois arquivos Python e um arquivo de 
     Este arquivo é um exemplo de como usar as classes `readPDF` e `summaryText` para ler um PDF e sumarizar o texto de suas páginas.
 
 ## Utilização
-    Para usar este projeto, você precisa instalar as dependências listadas no arquivo requirements.txt. Você pode fazer isso executando o seguinte comando:
+Para usar este projeto, você precisa instalar as dependências listadas no arquivo requirements.txt. Você pode fazer isso executando o seguinte comando:
 
-    ```pip install -r requirements.txt´´´
+    pip install -r requirements.txt
 
-    Depois de instalar as dependências, você pode executar o arquivo `app.py` para ler um PDF e sumarizar seu conteúdo.
+Depois de instalar as dependências, você pode executar o arquivo `app.py` para ler um PDF e sumarizar seu conteúdo.
