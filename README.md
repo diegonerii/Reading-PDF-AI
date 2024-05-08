@@ -20,4 +20,4 @@ Para usar este projeto, você precisa instalar as dependências listadas no arqu
 
     pip install -r requirements.txt
 
-Depois de instalar as dependências, você pode executar o arquivo `app.py` para ler um PDF e sumarizar seu conteúdo.
+Depois de instalar as dependências, você pode executar o arquivo `app.py` para ler um PDF e sumarizar seu conteúdo. 
