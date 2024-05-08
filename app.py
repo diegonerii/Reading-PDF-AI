@@ -14,9 +14,9 @@ class summaryText:
         self.task = "summarization"
         self.model = "facebook/bart-large-cnn"
         self.text = text
-        self.callfunction()
+        self.__callfunction()
     
-    def callfunction(self):
+    def __callfunction(self):
         pipe = pipeline(self.task, model=self.model)
         summary = print(pipe(self.text, max_length=130, min_length=30, do_sample=False)[0]['summary_text'])
         return summary
