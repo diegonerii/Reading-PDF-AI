@@ -12,3 +12,5 @@ __pycache__
 
 ## PDF
 *.pdf
+*.png
+*.jpeg
