@@ -52,6 +52,6 @@ class summaryText:
         img = PIL.Image.open(image)
         response = self.model.generate_content(["Descreva a imagem em poucas palavras em português do Brasil", img])
         return response.text
-    
+      
     def __call__(self):
         return self.summarizerMethod()
