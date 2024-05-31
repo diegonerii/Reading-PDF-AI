@@ -24,11 +24,12 @@ class summaryText:
         developing: reading a image e return what it means
     """
 
-    def __init__(self, media):
+    def __init__(self, media, question):
         self.google_api = os.environ.get('GOOGLE_API_KEY')
         self.file_name = os.environ.get('file_name')
         self.model = genai.GenerativeModel('gemini-1.5-flash')
         self.media = media
+        self.question = question
         """
         Parameters
         ---------
@@ -45,7 +46,7 @@ class summaryText:
             pdf_list.append((pageText))
 
         concatenated_text = " ".join(pdf_list)
-        response = self.model.generate_content(["Faça um resumo do texto para caber em uma página de word utilizando português do Brasil", concatenated_text])
+        response = self.model.generate_content([self.question, concatenated_text])
         return response.text
     
     def __imageReading(self, image):

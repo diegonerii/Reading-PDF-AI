@@ -3,62 +3,66 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
-st.title('PDF reader')
-
-DATE_COLUMN = 'date/time'
-DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
-         'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
-
-@st.cache_data
-def load_data(nrows):
-    data = pd.read_csv(DATA_URL, nrows=nrows)
-    lowercase = lambda x: str(x).lower()
-    data.rename(lowercase, axis='columns', inplace=True)
-    data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
-    return data
-
-df = pd.DataFrame({
-  'first column': [1, 2, 3, 4],
-  'second column': [10, 20, 30, 40]
-})
-
-# Create a text element and let the reader know the data is loading.
-data_load_state = st.text('Reading the pdf')
-
-# Load 10,000 rows of data into the dataframe.
-data = load_data(10000)
-st.subheader('Raw data')
-st.write(data)
-
-# Notify the reader that the data was successfully loaded.
-data_load_state.text("Done! Reading was a successful!")
-
-##################################################
-
-# Checkbox
-if st.checkbox('Show results of reading'):
-    chart_data = pd.DataFrame(
-       np.random.randn(20, 3),
-       columns=['a', 'b', 'c'])
-
-    chart_data
+st.title('Seja Bem-Vindo!')
 
 ##################################################
 
 # Options list
-df2 = pd.DataFrame({
-    'Input': ['Import PDF File', 'To write on blank Space']
+df_format_file = pd.DataFrame({
+    'Input': ['.pdf']
     })
 
 option = st.selectbox(
-    'Which way of the input data?',
-     df2['Input'])
+    'Qual o Formato dos Dados de Entrada?',
+     df_format_file['Input'])
 
-# bootom click
-left_column = st.columns(1)
-st.button('OK!')
+# # bootom click
+# left_column = st.columns(1)
+# if st.button('ok'):
+#     'Você selecionou: ', option
 
-'You selected: ', option
+##################################################
+
+text_input = st.text_input(
+        "Faça uma Pergunta Sobre o Texto"
+    )
+
+if text_input:
+    st.write("Inserir a função Python aqui")
+
+if st.button('Gerar Reposta'):
+    st.write("Reposta")
+
+##################################################
+
+# DATE_COLUMN = 'date/time'
+# DATA_URL = ('https://s3-us-west-2.amazonaws.com/'
+#          'streamlit-demo-data/uber-raw-data-sep14.csv.gz')
+
+# @st.cache_data
+# def load_data(nrows):
+#     data = pd.read_csv(DATA_URL, nrows=nrows)
+#     lowercase = lambda x: str(x).lower()
+#     data.rename(lowercase, axis='columns', inplace=True)
+#     data[DATE_COLUMN] = pd.to_datetime(data[DATE_COLUMN])
+#     return data
+
+# df = pd.DataFrame({
+#   'first column': [1, 2, 3, 4],
+#   'second column': [10, 20, 30, 40]
+# })
+
+# # Create a text element and let the reader know the data is loading.
+# data_load_state = st.text('Reading the pdf')
+
+# # Load 10,000 rows of data into the dataframe.
+# data = load_data(10000)
+# st.subheader('Raw data')
+# # st.write(data)
+
+# # Notify the reader that the data was successfully loaded.
+# data_load_state.text("Done! Reading was a successful!")
+
 
 
 ##################################################
@@ -77,17 +81,17 @@ st.button('OK!')
 
 ##################################################
 
-# bootom click
-left_column, right_column = st.columns(2)
-# You can use a column just like st.sidebar:
-left_column.button('OK')
+# # bootom click
+# left_column, right_column = st.columns(2)
+# # You can use a column just like st.sidebar:
+# left_column.button('Ok2')
 
-# Or even better, call Streamlit functions inside a "with" block:
-with right_column:
-    chosen = st.radio(
-        'Sorting hat',
-        ("Gryffindor", "Ravenclaw", "Hufflepuff", "Slytherin"))
-    st.write(f"You are in {chosen} house!")
+# # Or even better, call Streamlit functions inside a "with" block:
+# with right_column:
+#     chosen = st.radio(
+#         'Formato dos Dados de Entrada',
+#         ("Gryffindor", "Ravenclaw", "Hufflepuff", "Slytherin"))
+#     st.write(f"You are in {chosen} house!")
 
 ##################################################
 

@@ -10,7 +10,8 @@ environment.yml
 pyaienv
 __pycache__
 
-## PDF
+## Files
 *.pdf
 *.png
 *.jpeg
+streamlit.py
