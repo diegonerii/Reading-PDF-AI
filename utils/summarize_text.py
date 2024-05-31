@@ -1,6 +1,7 @@
 import os
 import warnings
 import PIL.Image
+import streamlit as st
 
 import fitz as pymupdf
 import google.generativeai as genai
@@ -25,8 +26,7 @@ class summaryText:
     """
 
     def __init__(self, media, question):
-        self.google_api = os.environ['GOOGLE_API_KEY']
-        self.file_name = os.environ['file_name']
+        self.google_api = st.secrets['GOOGLE_API_KEY']
         self.model = genai.GenerativeModel('gemini-1.5-flash')
         self.media = media
         self.question = question
