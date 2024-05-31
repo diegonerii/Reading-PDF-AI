@@ -3,35 +3,35 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
-st.title('Seja Bem-Vindo!')
+# st.title('Seja Bem-Vindo!')
 
-##################################################
+# ##################################################
 
-# Options list
-df_format_file = pd.DataFrame({
-    'Input': ['.pdf']
-    })
+# # Options list
+# df_format_file = pd.DataFrame({
+#     'Input': ['.pdf']
+#     })
 
-option = st.selectbox(
-    'Qual o Formato dos Dados de Entrada?',
-     df_format_file['Input'])
+# option = st.selectbox(
+#     'Qual o Formato dos Dados de Entrada?',
+#      df_format_file['Input'])
 
-# # bootom click
-# left_column = st.columns(1)
-# if st.button('ok'):
-#     'Você selecionou: ', option
+# # # bootom click
+# # left_column = st.columns(1)
+# # if st.button('ok'):
+# #     'Você selecionou: ', option
 
-##################################################
+# ##################################################
 
-text_input = st.text_input(
-        "Faça uma Pergunta Sobre o Texto"
-    )
+# text_input = st.text_input(
+#         "Faça uma Pergunta Sobre o Texto"
+#     )
 
-if text_input:
-    st.write("Inserir a função Python aqui")
+# if text_input:
+#     st.write("Inserir a função Python aqui")
 
-if st.button('Gerar Reposta'):
-    st.write("Reposta")
+# if st.button('Gerar Reposta'):
+#     st.write("Reposta")
 
 ##################################################
 
