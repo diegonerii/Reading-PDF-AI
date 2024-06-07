@@ -27,6 +27,7 @@ class summaryText:
 
     def __init__(self, media, question):
         self.google_api = st.secrets['GOOGLE_API_KEY']
+        # self.google_api = os.environ.get('GOOGLE_API_KEY')
         self.model = genai.GenerativeModel('gemini-1.5-flash')
         self.media = media
         self.question = question
