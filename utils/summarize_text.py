@@ -25,11 +25,11 @@ class summaryText:
         developing: reading a image e return what it means
     """
 
-    def __init__(self, media, question):
-        self.google_api = st.secrets['GOOGLE_API_KEY']
-        # self.google_api = os.environ.get('GOOGLE_API_KEY')
+    def __init__(self, text, question):
+        # self.google_api = st.secrets['GOOGLE_API_KEY']
+        self.google_api = os.environ.get('GOOGLE_API_KEY')
         self.model = genai.GenerativeModel('gemini-1.5-flash')
-        self.media = media
+        self.text = text
         self.question = question
         """
         Parameters
@@ -39,15 +39,7 @@ class summaryText:
         """
     
     def summarizerMethod(self):
-        document = pymupdf.open(self.media)
-        pdf_list = []
-
-        for page in document.pages():
-            pageText = page.get_text(option='text')
-            pdf_list.append((pageText))
-
-        concatenated_text = " ".join(pdf_list)
-        response = self.model.generate_content([self.question, concatenated_text])
+        response = self.model.generate_content([self.question, self.text])
         return response.text
     
     def __imageReading(self, image):
